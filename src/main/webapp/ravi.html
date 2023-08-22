@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+  /* ignore */
+body {
+  margin: 0;
+}
+
+#grid {
+  height: 100vh;
+}
+
+#left {
+background-color: black;
+}
+
+#right {
+  background-image: url("digital-art-blue-leaves-pattern-wallpaper-preview.jpg");
+  background: navajowhite;
+  border: 3rem solid rgb(0 0 0 / 10%);
+}
+
+/* the magic */
+#grid {
+  transition: 300ms;
+  display: grid;
+  grid-template-columns: 48px auto;
+}
+
+#grid:has(#left:hover) {
+  grid-template-columns: 30% auto;
+}
+/* magic + CSS variable */
+#grid {
+  transition: 300ms;
+  display: grid;
+  grid-template-columns: var(--left, 48px) auto;
+}
+
+#grid:has(#left:hover) {
+  --left: 30%;
+}
+    </style>
+</head>
+<body>
+	<form action="signup" method="post">
+    <div id="grid">
+        <div id="left">
+        </div>
+        <div id="right">
+            <h4>WELCOME TO TAP ACADEMY</h4>
+             Rool no: <input type="number" name="id" size="10" value="e.g. 1212" maxlength="10"><br>
+            <br>
+             Name : <input type="text" name="username" size="10" value="e.g. meher21" maxlength="10"><br>
+            <br>
+             last name : <input type="text" name="lname" size="10" value="e.g. xyz" maxlength="10"><br>
+            <br>
+             email ID : <input type="text" name="email" ><br>
+            <br>
+             Password : <input type="password" name="password" ><br>
+            <br>
+             Contact number : <input type="number" name="contact" size="10"><br>
+             Gender:
+            <input type="radio" name="r_gender"> Male
+                <input type="radio" name="r_gender"> Female
+                <input type="radio" name="r_gender" checked> infant
+                <br><br>
+             <input type="submit">
+            <br>
+        </div>
+      </div>
+      </form>
+</body>
+</html>
